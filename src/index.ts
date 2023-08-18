@@ -1,4 +1,4 @@
-import { Client, GatewayIntentBits, Collection, PermissionFlagsBits,} from "discord.js";
+import { Client, GatewayIntentBits, Collection, } from "discord.js";
 const { Guilds, MessageContent, GuildMessages, GuildMembers } = GatewayIntentBits
 const client = new Client({intents:[Guilds, MessageContent, GuildMessages, GuildMembers]})
 import { Command, SlashCommand } from "./types";

@@ -3,7 +3,7 @@ import { Command } from "../types";
 
 const command : Command = {
     name: "greet",
-    execute: (message, args) => {
+    execute: (message) => {
         let toGreet = message.mentions.members?.first()
         message.channel.send(`Hello there ${toGreet ? toGreet.user.username : message.member?.user.username}!`)
     },
