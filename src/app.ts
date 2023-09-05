@@ -20,7 +20,7 @@ const app : express.Application = express();
 const PORT = process.env.DB_PORT || 4000
 
 //initial endpoint
-app.get("/", (req:express.Request, res:express.Response)=>{
+app.get("/", (res:express.Response)=>{
     res.send("hi")
 })
 
