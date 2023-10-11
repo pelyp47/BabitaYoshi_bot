@@ -6,7 +6,7 @@
     "scripts": {
         "start": "cross-env node build/index.js",
         "start:dev": "concurrently \"tsc --watch\" \"cross-env nodemon build/index.js\"",
-        "build": "npm i && tsc"
+        "build": "npm i && tsc && cross-env node build/index.js"
     },
     "keywords": [],
     "author": "MericcaN41",
