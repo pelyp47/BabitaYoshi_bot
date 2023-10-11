@@ -1,9 +1,10 @@
-import { SlashCommandBuilder } from "discord.js";
+import { SlashCommandBuilder, PermissionFlagsBits } from "discord.js";
 import { SlashCommand } from "../types";
 
 const command: SlashCommand = {
     command: new SlashCommandBuilder()
         .setName("schedule")
+        .setDefaultMemberPermissions(PermissionFlagsBits.ManageChannels)
         .addStringOption(option => {
             return option
                 .setName("cohort")

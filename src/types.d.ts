@@ -33,6 +33,7 @@ export interface BotEvent {
     execute: (...args?) => void
 }
 
+
 declare global {
     namespace NodeJS {
         interface ProcessEnv {
@@ -51,4 +52,64 @@ declare module "discord.js" {
         commands: Collection<string, Command>,
         cooldowns: Collection<string, number>
     }
+}
+
+export type DiscordUser = {
+    role: string
+    nickName: string
+    userId: string | ''
+}
+export type UserToEnroll = {
+    nickName: string
+    userId: string | ''
+}
+export type FacToEnroll = {
+    role: string
+    course: string
+    nickName: string
+    userId: string | ''
+}
+
+export interface Meeting {
+    meetNum: string;
+    eventDate: string;
+    meetingLink: string;
+    eventtype: string;
+ };
+
+ export interface contactInfo {
+    id: number;
+    firstName: string;
+    lastName: string;
+    email: string;
+    age: number;
+    country: string;
+    timezone: string;
+    sourceOfReferral: string;
+    eduQuestSelectedDateTime: string; 
+    eduQuestDecision: string;
+ };
+ export interface Participant {
+    explorerId: string;
+    explorerMail: string;
+    explorerPassword: string;
+    discordNickname: string;
+    discordId?: string;
+    cohort: string;
+    contactInfo: ContactInfo;
+};
+
+export interface Course {
+    id: number;
+    courseName: string;
+    courseCipher: string;
+    linkToClassMaterials: string;
+    startDate: string;
+    endDate: string;
+    participants: {
+        facilitators: Participant[];
+        oversights: Participant[];
+        interns: Participant[];
+    };
+    schedule: Schedule[];
 }
