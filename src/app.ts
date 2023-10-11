@@ -22,7 +22,6 @@ const PORT = process.env.DB_PORT || 4000
 // initial endpoint
 app.get("/", (req:express.Request, res:express.Response)=>{
    console.log(req)
-    res.send("hi")
 })
 
 app.listen(PORT, ()=>{
