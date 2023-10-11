@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "node index.js",
+        "start": "node --watch index.js",
         "start:dev": "concurrently \"tsc --watch\" \"cross-env nodemon build/index.js\"",
         "build": "npm i && tsc"
     },
