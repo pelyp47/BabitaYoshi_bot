@@ -1,9 +1,10 @@
-import { SlashCommandBuilder, TextChannel, EmbedBuilder, ColorResolvable } from "discord.js"
+import { SlashCommandBuilder, TextChannel, EmbedBuilder, ColorResolvable, PermissionFlagsBits } from "discord.js"
 import { SlashCommand } from "../types";
 
 const command: SlashCommand = {
   command: new SlashCommandBuilder()
     .setName("embed")
+    .setDefaultMemberPermissions(PermissionFlagsBits.ManageChannels)
     .addStringOption(option => {
       return option
         .setName("title")

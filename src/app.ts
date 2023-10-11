@@ -19,8 +19,9 @@ const app : express.Application = express();
 //app port
 const PORT = process.env.DB_PORT || 4000
 
-//initial endpoint
+// initial endpoint
 app.get("/", (req:express.Request, res:express.Response)=>{
+   console.log(req)
     res.send("hi")
 })
 

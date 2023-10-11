@@ -50,3 +50,32 @@ export const setGuildOption = async (guild: Guild, option: GuildOption, value: a
     foundGuild.options[option] = value
     foundGuild.save()
 }
+
+export function getCourseFullName(courseName: string):string {
+    if(courseName.includes("IWD")) return 'Intro to Web Design'
+    if(courseName.includes("PIT")) return 'Pitch and Presentation'
+    if(courseName.includes("BIT")) return 'Basics of Internet Troubleshooting and Communication'
+    if(courseName.includes("LED")) return 'Leadership'
+
+    return ''
+}
+
+export function getMeetingSuffix(meetingNum: number, courseName: string): string {
+    if ((courseName.includes("IWD") || courseName.includes("PIT") || courseName.includes("BIT")) && meetingNum === 4) return "EXPO"
+    if (courseName.includes("LED") && meetingNum === 4) return "4th meeting"
+    switch (meetingNum) {
+        case 1: return "1st meeting"
+        case 2: return "2nd meeting"
+        case 3: return "3rd meeting"
+        default: return `${meetingNum}th meeting`
+    }
+}
+
+export function getLmsLink(courseName: string): string {
+    if(courseName.includes("IWD")) return 'https://nobel-coaching.teachable.com/courses/intro-to-web-design'
+    if(courseName.includes("PIT")) return 'https://nobel-coaching.teachable.com/courses/pitch-presentation'
+    if(courseName.includes("BIT")) return 'https://nobel-coaching.teachable.com/courses/basics-of-internet'
+    if(courseName.includes("LED")) return 'https://nobel-coaching.teachable.com/courses/leadership-facilitation-class'
+
+    return ''
+}
