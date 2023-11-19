@@ -59,6 +59,14 @@ export type DiscordUser = {
     nickName: string
     userId: string | ''
 }
+
+export type ScheduleEvent = {
+    id: number
+    eventDate: string | ""
+    eventName: string
+    cohort: string
+}
+
 export type UserToEnroll = {
     nickName: string
     userId: string | ''
